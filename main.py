@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
-import os
+import config
 import sendgrid
+from twython import Twython, TwythonError
 from sendgrid.helpers.mail import Email
 from sendgrid.helpers.mail import Content
 from sendgrid.helpers.mail import Mail
@@ -19,7 +20,7 @@ def index():
         if email_address != '':
             full_name = full_name.encode('ascii', errors="ignore").decode()
 
-            SENDGRID_API_KEY = os.getenv('API_KEYS')
+            SENDGRID_API_KEY = Twython.(config.api_key)
             sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
 
             message = Mail(

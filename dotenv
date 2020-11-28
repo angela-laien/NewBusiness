@@ -1,6 +1,0 @@
-APP_ENVIRONMENT=local
-APP_NAME=localhost
-
-QUEUE_DRIVER=sync
-
-API_KEYS=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
