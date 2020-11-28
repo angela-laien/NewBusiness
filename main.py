@@ -20,7 +20,7 @@ def index():
         if email_address != '':
             full_name = full_name.encode('ascii', errors="ignore").decode()
 
-            SENDGRID_API_KEY = Twython.(config.api_key)
+            SENDGRID_API_KEY = Twython(config.api_key)
             sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
 
             message = Mail(
